@@ -1,0 +1,64 @@
+@model Candidate
+
+<div class="text-start">
+    <h1>Başvuru Formu</h1>
+    <hr>
+</div>
+
+<form method="post" asp-action="Apply">
+    <div class="form-group my-2">
+
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control">
+    </div>
+    <div class="form-group my-2">
+
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" class="form-control">
+    </div>
+    
+    <div class="form-group my-2">
+
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" class="form-control">
+    </div>
+    <div class="form-group my-2">
+
+        <label asp-for="Age">Age</label>
+        <select asp-for="Age" class="form-control">
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+        </select>
+    </div>
+    <div>
+        <h3>Select One Course</h3>
+        <hr>
+    </div>
+    <div>
+        <p>
+            <input type="radio" asp-for="SelectedCourse" value="C#" id="C#">
+            <label for="">C#</label>
+        </p>
+        <p>
+            <input type="radio" asp-for="SelectedCourse" value="Python" id="Python">
+            <label for="">Python</label>
+        </p>
+        <p>
+            <input type="radio" asp-for="SelectedCourse" value="Java" id="Java">
+            <label for="">Java</label>
+        </p>
+        <p>
+            <input type="radio" asp-for="SelectedCourse" value="C++" id="C++">
+            <label for="">C++</label>
+        </p>
+    </div>
+    <div>
+        <button class="btn btn-primary" type="submit">Apply</button>
+    </div>
+    <div class="text-danger" asp-validation-summary="All"></div>
+
+</form>
